@@ -1,158 +1,305 @@
-
 /* Notas para mejorar: 
     - Primero crear las variales de colores que se van
     a estar usando en el desarrollo para tener un mejor 
     control de la paleta de coloes que se estara usando.
-
-    - 
-
-
-*/
-
 /* Varaibles en raiz */
 
-:root{
-    --color-bg: #fff;
-    --color-bg-azul: hsl(225, 100%, 94%);
-    --color-principal:hsl(245, 75%, 52%);
-    --color-text-encabezado:hsl(223, 47%, 23%);
-    --color-text-parrafo:hsl(224, 23%, 55%);
-    --color-text-boton-principal:#fff; 
-    --color-text-boton-terciario:hsl(224, 23%, 55%);
+:root {
+  --color-bg: #fff;
+  --color-bg-azul: hsl(225, 100%, 94%);
+  --color-principal: hsl(245, 75%, 52%);
+  --color-text-encabezado: hsl(223, 47%, 23%);
+  --color-text-parrafo: hsl(224, 23%, 55%);
+  --color-text-boton-principal: #fff;
+  --color-text-boton-terciario: hsl(224, 23%, 55%);
 }
 
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+  padding: 0px;
+  margin: 0px;
 }
 
 /*Estilos de los bloques*/
 body {
-    background-image: url("./images/pattern-background-desktop.svg"), url("./images/pattern-background-desktop.svg");
-    background-repeat: no-repeat, no-repeat;
-    background-position: top center, bottom center;
-    background-size: contain, contain;    
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;     
-    min-height: 100vh;
-    background-color: white;
-    /*Agregando tipografia en css*/
-    font-family: "Red Hat Display", sans-serif;
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  background-color: hsl(225, 100%, 98%);
+  font-family: "Red Hat Display", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* necesario para ::after */
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-    background-color: var(--color-bg);    
-    overflow: hidden;
-    max-width: 600px;
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-bg);
+  overflow: hidden;
+  max-width: 600px;
 }
 
-.card-text-body{
-    display: flex;
-    flex-direction: column;
-    padding: 42px;
-    gap: 18px
+.card-text-body {
+  display: flex;
+  flex-direction: column;
+  padding: 42px;
+  gap: 18px;
 }
 
-.card-plan{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 12px;
-    padding: 16px;
-    background-color: hsl(225, 100%, 98%);
-
+.card-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: hsl(225, 100%, 98%);
 }
 
-.grup-texts-card{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 100%;
+.grup-texts-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
 
-.icon-texts{
-    display: flex;
-    gap:16px;
-    width: 100%;
-
+.icon-texts {
+  display: flex;
+  gap: 16px;
+  width: 100%;
 }
 
-.icono{
-    left: 68px;
-    /* Ajusta sin recortar ni estirar la imagen */
-    object-fit: contain;    
+.icono {
+  left: 68px;
+  /* Ajusta sin recortar ni estirar la imagen */
+  object-fit: contain;
 }
 
-.grup-btns{
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 24px;
+.grup-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
 }
-
 
 /*Estilos de textos*/
 /*Card*/
-h2{
-    font-size: 42px;
-    color: var(--color-text-encabezado);
-    font-weight:900;
-    text-align: center;
-    letter-spacing: -1px;
+h2 {
+  font-size: 42px;
+  color: var(--color-text-encabezado);
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: -1px;
 }
 
-.text-body{
-    font-size: 24px;
-    color: var(--color-text-parrafo);
-    text-align: center;
-    font-weight: 700;
+.text-body {
+  font-size: 24px;
+  color: var(--color-text-parrafo);
+  text-align: center;
+  font-weight: 700;
 }
 
-.card-name{
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--color-text-encabezado);
-    text-align: left;
+.card-name {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-text-encabezado);
+  text-align: left;
 }
-.card-precio{
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--color-text-parrafo);
-    text-align: left;
+.card-precio {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-parrafo);
+  text-align: left;
 }
 
-.enlace{
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
+.enlace {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 /* Botones */
 
-.btn-principal{
-    background-color:#766cf1;
-    font-size: 18px;
+.btn-principal {
+  background-color: hsl(245, 75%, 52%)  ;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-radius: 12px;
+  border: 0 solid #fff;
+  padding: 18px;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background-color: white;
+  font-size: 18px;
+  font-weight: 800;
+  color: hsl(223, 47%, 23%);
+  border-radius: 12px;
+  border: 0 solid #fff;
+  padding: 18px;
+  cursor: pointer;
+}
+
+/* Estado activo de los enlaces */
+
+/* Botones */
+.btn-principal:active{
+  background-color: #766cf1;
+}
+
+/* Enlaces */
+.enlace:active{
+  color: #766cf1;
+}
+
+
+/* Diseño en movil responsibo */
+@media(max-width: 375px){
+  /*Estilos de los bloques*/
+  body {
+    background-image: url("./images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    background-color: hsl(225, 100%, 98%);
+    font-family: "Red Hat Display", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* necesario para ::after */
+    padding: 10px 0px
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-bg);
+    overflow: hidden;
+    max-width: 300px;
+  }
+
+  .card-text-body {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 12px;
+  }
+
+  .card-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: hsl(225, 100%, 98%);
+  }
+
+  .grup-texts-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .icon-texts {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .icono {
+    width: 42px;
+    /* Ajusta sin recortar ni estirar la imagen */
+    object-fit: contain;
+  }
+
+  .grup-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  /*Estilos de textos*/
+  /*Card*/
+  h2 {
+    font-size: 24px;
+    color: var(--color-text-encabezado);
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: -1px;
+  }
+
+  .text-body {
+    font-size: 14px;
+    color: var(--color-text-parrafo);
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .card-name {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--color-text-encabezado);
+    text-align: left;
+  }
+  .card-precio {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-parrafo);
+    text-align: left;
+  }
+
+  .enlace {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Botones */
+
+  .btn-principal {
+    background-color: hsl(245, 75%, 52%)  ;
+    font-size: 14px;
     font-weight: 600;
     color: white;
     border-radius: 12px;
     border: 0 solid #fff;
-    padding: 18px;
-}
+    padding: 14px;
+    cursor: pointer;
+  }
 
-.btn-secundario{
-    background-color:white;
-    font-size: 18px;
-    font-weight: 700;
-    color: hsl(223, 47%, 23%); 
+  .btn-secundario {
+    background-color: white;
+    font-size: 14px;
+    font-weight: 800;
+    color: hsl(223, 47%, 23%);
     border-radius: 12px;
     border: 0 solid #fff;
-    padding: 18px;    
+    padding: 14px;
+    cursor: pointer;
+  }
+
+  /* Estado activo de los enlaces */
+
+  /* Botones */
+  .btn-principal:active{
+    background-color: #766cf1;
+  }
+
+  /* Enlaces */
+  .enlace:active{
+    color: #766cf1;
+  }
+
+
 }
-
-
